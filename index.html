@@ -11,7 +11,7 @@
         let humanScore = 0;
         let computerScore = 0;
 
-        // playRound(getHumanChoice, getComputerChoice);
+        playRound(getHumanChoice, getComputerChoice);
 
         // Play a round
         function playRound(player1, player2) {
@@ -19,6 +19,32 @@
             let player1Choice = player1().toLowerCase()
             let player2Choice = player2().toLowerCase()
             
+            console.log(`Player 1 has chosen ${player1Choice}. Player 2 has chosen ${player2Choice}`);
+
+            if(player1Choice===player2Choice) {
+                console.log('Draw. No points!')
+            } else if (player1Choice==='rock' && player2Choice==='paper') {
+                console.log('You lose! Paper beats rock')
+                computerScore++;
+            }  else if (player1Choice==='rock' && player2Choice==='scissor') {
+                console.log('You win! Rock beats scissor')
+                humanScore++;
+            } else if (player1Choice==='paper' && player2Choice==='rock') {
+                console.log('You win! Paper beats rock')
+                humanScore++;
+            }  else if (player1Choice==='paper' && player2Choice==='scissor') {
+                console.log('You lose! Scissor beats paper')
+                computerScore++;
+            } else if (player1Choice==='scissor' && player2Choice==='rock') {
+                console.log('You lose! Rock beats scissor')
+                computerScore++;
+            }  else if (player1Choice==='scissor' && player2Choice==='paper') {
+                console.log('You win! Scissor beats paper')
+                computerScore++;
+            }
+
+            console.log(`Player 1 Score ${humanScore}`);
+            console.log(`Player 2 Score ${computerScore}`);
         }
 
         // Randomly return "rock", "paper" or "scissors"
