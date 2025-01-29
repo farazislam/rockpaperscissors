@@ -7,6 +7,20 @@
 </head>
 <body>
     <script>
+        // Scores for each time the human or computer wins
+        let humanScore = 0;
+        let computerScore = 0;
+
+        // playRound(getHumanChoice, getComputerChoice);
+
+        // Play a round
+        function playRound(player1, player2) {
+            // Hold the values
+            let player1Choice = player1().toLowerCase()
+            let player2Choice = player2().toLowerCase()
+            
+        }
+
         // Randomly return "rock", "paper" or "scissors"
         function getComputerChoice() {
             // Create a random number between 1 and 3 inclusive
@@ -22,11 +36,10 @@
         }
 
         // Obtain human choice
-        function humanChoice() {
+        function getHumanChoice() {
             const choice = prompt('Choose Rock, Paper or Scissor?')
             return choice;
         }
-
 
     </script>
 </body>
