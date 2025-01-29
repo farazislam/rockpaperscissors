@@ -11,7 +11,26 @@
         let humanScore = 0;
         let computerScore = 0;
 
-        playRound(getHumanChoice, getComputerChoice);
+        playGame();
+
+        function playGame() {
+            let currentRound = 1;
+
+            while(currentRound < 6) {
+                console.log(`ROUND ${currentRound}`);
+                playRound(getHumanChoice, getComputerChoice);
+                console.log(`Current Scores: Player 1=${humanScore} Player 2=${computerScore}`);
+                currentRound++;
+            }
+
+            if(humanScore>computerScore) {
+                console.log('You have won the game!')
+            } else if (computerScore<humanScore) {
+                console.log('You have lose the game!')
+            } else {
+                console.log('The game has ended in a draw!')
+            }
+        }
 
         // Play a round
         function playRound(player1, player2) {
@@ -42,9 +61,6 @@
                 console.log('You win! Scissor beats paper')
                 computerScore++;
             }
-
-            console.log(`Player 1 Score ${humanScore}`);
-            console.log(`Player 2 Score ${computerScore}`);
         }
 
         // Randomly return "rock", "paper" or "scissors"
