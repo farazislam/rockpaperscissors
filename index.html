@@ -6,7 +6,18 @@
     <title>Document</title>
 </head>
 <body>
+    <button class="choice" value="Rock">Rock</button>
+    <button class="choice" value="Paper">Paper</button>
+    <button class="choice" value="Scissor">Scissor</button>
+
     <script>
+        let buttonsNodeList = document.querySelectorAll('.choice');
+        let buttonsArray = Array.from(buttonsNodeList);
+
+        buttonsArray.forEach(button => {
+            button.addEventListener('click', ()=> console.log(button.getAttribute("value")))
+        })
+
         // Scores for each time the human or computer wins
         let humanScore = 0;
         let computerScore = 0;
