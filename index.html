@@ -11,26 +11,26 @@
         let humanScore = 0;
         let computerScore = 0;
 
-        playGame();
+        // playGame();
 
-        function playGame() {
-            let currentRound = 1;
+        // function playGame() {
+        //     let currentRound = 1;
 
-            while(currentRound < 6) {
-                console.log(`ROUND ${currentRound}`);
-                playRound(getHumanChoice, getComputerChoice);
-                console.log(`Current Scores: Player 1=${humanScore} Player 2=${computerScore}`);
-                currentRound++;
-            }
+        //     while(currentRound < 6) {
+        //         console.log(`ROUND ${currentRound}`);
+        //         playRound(getHumanChoice, getComputerChoice);
+        //         console.log(`Current Scores: Player 1=${humanScore} Player 2=${computerScore}`);
+        //         currentRound++;
+        //     }
 
-            if(humanScore>computerScore) {
-                console.log('You have won the game!')
-            } else if (computerScore<humanScore) {
-                console.log('You have lost the game!')
-            } else if (computerScore===humanScore) {
-                console.log('The game has ended in a draw!')
-            }
-        }
+        //     if(humanScore>computerScore) {
+        //         console.log('You have won the game!')
+        //     } else if (computerScore<humanScore) {
+        //         console.log('You have lost the game!')
+        //     } else if (computerScore===humanScore) {
+        //         console.log('The game has ended in a draw!')
+        //     }
+        // }
 
         // Play a round
         function playRound(player1, player2) {
