@@ -20,6 +20,7 @@
 
         // Initialize div screen
         let status = document.querySelector('.status');
+        status.innerText = 'Select rock, paper or scissor to begin game'
         status.style.marginTop = '20px';
         status.style.marginBottom = '20px';
         status.style.backgroundColor = 'lightgreen';
@@ -38,7 +39,7 @@
             let player1Choice = humanChoice;
             let player2Choice = getComputerChoice();
             let displayScores;
-            let choices = `Human chose ${player1Choice} and computer chose ${player2Choice}.
+            let choices = `You chose ${player1Choice} and computer chose ${player2Choice}.
             
             `
             let outcome;
@@ -66,15 +67,17 @@
                 humanScore++;
             }
 
-            displayScores =  `Human Score: ${humanScore}
+            displayScores =  `Player 1 Score: ${humanScore}
                             Computer Score: ${computerScore}
                             
                             `
 
             if(humanScore===5) {
-                status.innerText = 'You have won the game!'
+                status.innerText = 'You have won the game! Refresh page to start again.'
+                removeChoices()
             } else if(computerScore===5) {
-                status.innerText = 'You have lost the game!'
+                status.innerText = 'You have lost the game! Refresh page to start again.'
+                removeChoices()
             } else {
                 status.innerText = `${displayScores} ${choices} ${outcome}`
             }
@@ -92,6 +95,13 @@
             } else {
                 return 'scissor'
             }
+        }
+
+        // Remove choice buttons
+        function removeChoices() {
+            rock.remove();
+            paper.remove();
+            scissor.remove();
         }
 
     </script>
